@@ -9,15 +9,140 @@
       name="og:image"
       content="https://resoluteerror.github.io/vite-website/og-image.png"
     />
+    <!--link rel="stylesheet" href="styles.css"-->
   </head>
   <body>
-    <div id="app"></div>
     <div>
+
       <a href="https://iconscout.com/illustrations/404-error-page" class="text-underline font-size-sm" target="_blank">404 Error page</a> by <a href="https://iconscout.com/contributors/denayuneis" class="text-underline font-size-sm">Rini Astiyah</a> on <a href="https://iconscout.com" class="text-underline font-size-sm">IconScout</a>
       <img
         src="/src/assets/cats/funny-cat.webp"
         style="width: 200px; margin-right: 50px"
       />
+
+    <!--se debe reformatear contenido html a dentro del id app-->
+    <div id="app"></div> 
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">FloresLaRiva</div>
+            <div class="nav-menu">
+                <a href="#" class="nav-link">Home</a>
+                <div class="dropdown">
+                    <span class="nav-link">Arreglos</span>
+                    <div class="dropdown-content">
+                        <a href="#">Bodas</a>
+                        <a href="#">Cumpleaños</a>
+                        <a href="#">Aniversarios</a>
+                        <a href="#">Funerales</a>
+                    </div>
+                </div>
+                <a href="#custom" class="nav-link">Personalizados</a>
+                <div class="dropdown">
+                    <span class="nav-link">Flores al mayor</span>
+                    <div class="dropdown-content">
+                        <a href="#" class="disabled">Rosas</a>
+                        <a href="#" class="disabled">Claveles</a>
+                        <a href="#" class="disabled">Lirios</a>
+                        <a href="#" class="disabled">Orquídeas</a>
+                    </div>
+                </div>
+                <a href="#" class="nav-link disabled">Suscripciones</a>
+                <a href="#" class="nav-link disabled">FAQ</a>
+                <a href="https://wa.me/" target="_blank" class="nav-link">Déjanos Ayudarte</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 id="slogan">Cada ocasión merece flores</h1>
+            <a href="#featured" class="cta-button">Descubre Nuestros Arreglos</a>
+        </div>
+    </section>
+
+    <section id="featured" class="featured">
+        <h2 class="section-title">Arreglos Destacados</h2>
+        <div class="cards-container">
+            <div class="card">
+                <img src="/api/placeholder/400/300" alt="Arreglo Romántico">
+                <div class="card-content">
+                    <h3>Amor Eterno</h3>
+                    <p>Rosas rojas y lirios blancos</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/api/placeholder/400/300" alt="Arreglo Cumpleaños">
+                <div class="card-content">
+                    <h3>Celebración</h3>
+                    <p>Girasoles y margaritas</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/api/placeholder/400/300" alt="Arreglo Elegante">
+                <div class="card-content">
+                    <h3>Elegancia Pura</h3>
+                    <p>Orquídeas y rosas blancas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="custom" class="custom">
+        <h2 class="section-title">Arreglos Personalizados</h2>
+        <p>Crea el arreglo perfecto para tu ocasión especial</p>
+        <button class="cta-button" onclick="openQuiz()">Iniciar Cuestionario</button>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title">Historias de Éxito</h2>
+        <div class="cards-container">
+            <div class="testimonial-card">
+                <p>"El arreglo fue exactamente lo que imaginé para mi boda. ¡Superó todas mis expectativas!"</p>
+                <strong>- María García</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"El servicio personalizado fue excepcional. Crearon el arreglo perfecto para el cumpleaños de mi madre."</p>
+                <strong>- Carlos Rodríguez</strong>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <h3>Enlaces Útiles</h3>
+                <a href="#">Política de Envíos</a>
+                <a href="#">Política de Devoluciones</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#" onclick="openModal()">Contáctanos</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Contáctanos</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje:</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="cta-button">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    
     </div>
     <script type="module" src="/src/scripts/main.ts"></script>
   </body>

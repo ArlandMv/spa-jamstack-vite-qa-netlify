@@ -16,19 +16,27 @@ JavaScript moderno con arquitectura Jamstack, Vite para desarrollo y bundling, C
 
 Este proyecto es una SPA moderna utilizando Vite y la arquitectura Jamstack, que permite un desarrollo ágil y optimizado con integración continua y despliegue continuo.
 
-## Características
+## Características Clave para una Landing Page(SPA)
 
-- Arquitectura Jamstack
-- Desarrollo ágil con Vite
-- Integración continua con GitHub Actions
-- Despliegue continuo en Netlify
+1. Encabezado llamativo: Incluye el nombre del producto o servicio con un mensaje claro y persuasivo. 
+2. Formulario de Captura de Leads: Un formulario de contacto o suscripción que permita captar datos de los visitantes.
+3. Beneficios o Características del Producto: Detalle de las ventajas que ofrece el producto o servicio.
+4. Testimonios de Clientes: Sección con reseñas o testimonios que generen confianza.
+5. Llamada a la Acción (CTA): Botones visibles que inviten a realizar una acción, como “Contáctanos” o “Más información”.
+6. Imágenes o Videos de Alta Calidad: Elementos visuales que complementen el mensaje de la página.
+7. Compatibilidad Móvil: Responsividad en todos los dispositivos.
+8. Optimización SEO: Estructura de encabezados y texto amigable para buscadores.
+9. Velocidad de Carga Rápida: Uso optimizado de archivos y scripts para asegurar tiempos de carga mínimos.
 
 ## Tecnologías Utilizadas
 
-- JavaScript
-- Vite
-- GitHub Actions
-- Netlify
+**DEV**
+- Framework VanilaJs (JavaScript, SCSS y HTML5) 
+- Typescript (asegurar tipos y DX) 
+- Vite ()
+**OPS**
+- GitHub Actions (Integracion Continua)
+- Netlify(Hosting y Despliegue continuo)
 
 ## Instalación
 
@@ -105,5 +113,5 @@ How GitHub Actions 10x my productivity
 
 tests with playwrite
 
-
+The ONLY Sales Page You Need To Make $10k/month
  -->
