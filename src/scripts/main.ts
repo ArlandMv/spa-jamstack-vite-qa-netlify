@@ -3,6 +3,11 @@ import '../styles/main.css';
 //import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts';
 
+declare global {
+  function openModal(): void;
+  function openQuiz(): void;
+}
+
 function initializeApp() {
   const appElement = document.querySelector<HTMLDivElement>('#app');
   if (appElement) {
@@ -69,6 +74,14 @@ function openQuiz() {
   alert('Próximamente: Cuestionario personalizado para crear tu arreglo ideal');
 }
 
+// Close modal when clicking outside
+window.onclick = function (event) {
+  const modal = document.getElementById('contactModal');
+  if (event.target === modal) {
+    closeModal();
+  }
+};
+
 // Deshabilitar enlaces no disponibles
 document.querySelectorAll('.disabled').forEach((link) => {
   link.addEventListener('click', (e) => {
@@ -76,3 +89,34 @@ document.querySelectorAll('.disabled').forEach((link) => {
     alert('Esta función estará disponible próximamente');
   });
 });
+
+// Attach event listeners once DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  // Add event listener for opening modal
+  const contactLink = document.getElementById('contactLink');
+  if (contactLink) {
+    contactLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      openModal();
+    });
+  }
+});
+
+// Add event listener for opening quiz
+const quizButton = document.getElementById('quizButton');
+if (quizButton) {
+  quizButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    openQuiz();
+  });
+}
+
+// Contact form submission
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Gracias por tu mensaje. Te contactaremos pronto.');
+    closeModal();
+  });
+}

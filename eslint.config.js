@@ -15,9 +15,16 @@ export default [
       '@typescript-eslint': tsPlugin,
       prettier: prettierPlugin,
     },
-    ignores: [
+     ignores: [
       "package.json",
       "package-lock.json",
+      "netlify.toml",
+      "*.config.js",   
+      "*.config.json", 
+      "*.yml",         
+      "*.yaml",
+      "*.toml",
+      ".env",          
       "node_modules/",
       "dist/",
       "build/",

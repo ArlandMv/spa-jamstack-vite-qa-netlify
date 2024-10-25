@@ -32,7 +32,7 @@ Este proyecto es una SPA moderna utilizando Vite y la arquitectura Jamstack, que
 
 **DEV**
 - Framework VanilaJs (JavaScript, SCSS y HTML5) 
-- Typescript (asegurar tipos y DX) 
+- Typescript ("type guards" y DX) 
 - Vite ()
 **OPS**
 - GitHub Actions (Integracion Continua)
@@ -114,4 +114,19 @@ How GitHub Actions 10x my productivity
 tests with playwrite
 
 The ONLY Sales Page You Need To Make $10k/month
+
+CD with netlify
+- netlify login
+- netlify init
+- 
+
+Preview Deploy:
+netlify deploy
+
+Production  Deploy:
+netlify deploy --prod
+
+// variables
+netlify env:set VITE_API_URL "https://api.example.com"
+
  -->

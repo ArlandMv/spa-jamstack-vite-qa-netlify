@@ -1,13 +1,3 @@
-toml
-[
-build
-]
-  publish = "."
-  command = ""  # No necesitamos comando de build por ahora
-
-[[
-redirects
-]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[build]
+  publish = "dist"
+  command = "npm run build"

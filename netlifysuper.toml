@@ -1,0 +1,54 @@
+# netlify.toml
+
+[build]
+  publish = "dist"            # The directory to publish (where Vite builds to)
+  command = "npm run build"   # Command to build your project
+
+[dev]
+  command = "npm run dev"     # Command to run the development server
+  functions = "functions"      # Directory for serverless functions
+
+[functions]
+  # Configure functions settings
+  node_bundler = "esbuild"    # Use esbuild for bundling functions (optional)
+  # Specify any other function settings here
+
+[[redirects]]
+  from = "/old-route"         # Redirect from an old route
+  to = "/new-route"           # Redirect to a new route
+  status = 301                # Permanent redirect
+
+[[redirects]]
+  from = "/api/*"             # Catch-all for API calls
+  to = "/.netlify/functions/:splat"  # Proxy to serverless functions
+  status = 200                # Keep the original request method
+
+[[headers]]
+  for = "/*"                  # Apply headers for all routes
+  [headers.values]
+    X-Content-Type-Options = "nosniff"  # Security header
+    X-Frame-Options = "DENY"             # Security header
+    Content-Security-Policy = "default-src 'self'" # CSP header
+
+[build.environment]
+  NODE_ENV = "production"       # Environment variable for production
+  API_URL = "https://api.example.com"  # Example API URL for your application
+
+[plugins]
+  [[plugins]]
+    package = "@netlify/plugin-vite"  # Plugin for Vite support
+
+  [[plugins]]
+    package = "netlify-plugin-sitemap"  # Plugin to automatically generate a sitemap
+    config = { 
+      hostname = "https://your-domain.netlify.app" 
+    }
+
+  [[plugins]]
+    package = "netlify-plugin-minify"   # Plugin to minify assets
+    config = { 
+      minify = true 
+    }
+
+[build.command]
+  command = "npm run build"            # Custom build command
